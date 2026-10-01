@@ -1,4 +1,4 @@
-const BIRTHDAY_DATE = "2026-11-30T00:00:00";
+const BIRTHDAY_DATE = "2000-04-10";
 const brotherName = "Brother";
 
 const nameEls = [
@@ -18,6 +18,53 @@ const giftBox = document.getElementById("giftBox");
 const openGiftBtn = document.getElementById("openGiftBtn");
 const finalReveal = document.getElementById("finalReveal");
 
+// Envelope Letter Interaction
+const envelope = document.getElementById("envelope");
+const letterContent = document.getElementById("letterContent");
+const closeLetterBtn = document.getElementById("closeLetterBtn");
+
+function displayBirthday() {
+  const birthDate = new Date(BIRTHDAY_DATE);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = birthDate.toLocaleDateString('en-US', options);
+  
+  const birthdayEl = document.getElementById("birthdayDate");
+  if (birthdayEl) {
+    birthdayEl.textContent = formattedDate;
+  }
+}
+
+displayBirthday();
+
+// Envelope Animation
+envelope.addEventListener("click", () => {
+  if (envelope.classList.contains("open")) {
+    // Close envelope
+    envelope.classList.remove("open");
+    letterContent.classList.add("hidden");
+  } else {
+    // Open envelope
+    envelope.classList.add("open");
+    letterContent.classList.remove("hidden");
+    burstConfetti(80);
+  }
+});
+
+// Close Letter Button
+closeLetterBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  envelope.classList.remove("open");
+  letterContent.classList.add("hidden");
+});
+
+// Close letter when clicking outside
+letterContent.addEventListener("click", (e) => {
+  if (e.target === letterContent) {
+    envelope.classList.remove("open");
+    letterContent.classList.add("hidden");
+  }
+});
+
 openBtn.addEventListener("click", () => {
   splash.classList.add("hidden");
   content.classList.remove("hidden");
@@ -36,31 +83,6 @@ openGiftBtn.addEventListener("click", () => {
   finalReveal.classList.remove("hidden");
   burstConfetti(200);
 });
-
-function updateCountdown() {
-  const target = new Date(BIRTHDAY_DATE);
-  const now = new Date();
-  let diff = Math.max(0, target.getTime() - now.getTime());
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  diff -= days * 1000 * 60 * 60 * 24;
-
-  const hours = Math.floor(diff / (1000 * 60 * 60));
-  diff -= hours * 1000 * 60 * 60;
-
-  const minutes = Math.floor(diff / (1000 * 60));
-  diff -= minutes * 1000 * 60;
-
-  const seconds = Math.floor(diff / 1000);
-
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 const canvas = document.getElementById("confettiCanvas");
 const ctx = canvas.getContext("2d");
