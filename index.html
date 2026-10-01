@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Brother ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <main class="page-shell">
+      <section id="splash" class="panel splash-screen">
+        <div class="tag">A little gift from your favorite sibling ✨</div>
+        <h1>Hey Brother! 👀</h1>
+        <p>I made something special for you...</p>
+        <button id="openBtn" class="primary-btn">Open Your Birthday Surprise 🎁</button>
+      </section>
+
+      <div id="content" class="hidden">
+        <section class="panel intro-panel">
+          <p class="eyebrow">Birthday Glow</p>
+          <h2>Happy Birthday, <span id="broName">Brother</span>! 🎂</h2>
+          <div class="countdown" aria-label="Birthday countdown">
+            <div><span id="days">00</span><small>days</small></div>
+            <div><span id="hours">00</span><small>hours</small></div>
+            <div><span id="minutes">00</span><small>minutes</small></div>
+            <div><span id="seconds">00</span><small>seconds</small></div>
+          </div>
+          <button id="wishBtn" class="secondary-btn">Send birthday wish 💬</button>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Our Story</p>
+          <h3>📸 Our Memories</h3>
+          <div class="gallery">
+            <figure class="polaroid rotate-left">
+              <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80" alt="Childhood memory" />
+              <figcaption>Little us ❤️</figcaption>
+            </figure>
+            <figure class="polaroid rotate-right">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Adventure memory" />
+              <figcaption>Big laughs, big chaos 😂</figcaption>
+            </figure>
+            <figure class="polaroid rotate-left">
+              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80" alt="Recent memory" />
+              <figcaption>Latest chapter ✨</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">The Truth</p>
+          <h3>😂 Brother Things</h3>
+          <div class="chips">
+            <span>Always steals the last bite 🍕</span>
+            <span>Acts innocent but is definitely the troublemaker 😌</span>
+            <span>Fake-serious but makes everyone laugh</span>
+            <span>Owns the weirdest inside jokes ever 🤭</span>
+            <span>Acts like a grown-up... until it’s snack time</span>
+          </div>
+        </section>
+
+        <section class="panel letter-panel">
+          <p class="eyebrow">From the heart</p>
+          <h3>💌 A Letter for You</h3>
+          <article class="letter">
+            <p>Dear <span id="broNameLetter">Brother</span>,</p>
+            <p>
+              Happy birthday to the one person who can turn ordinary days into the funniest memories ever.
+              You are annoying, hilarious, loving, and somehow the most important person in the family.
+              You make life lighter, louder, and a lot more fun.
+            </p>
+            <p>
+              Thank you for being my brother — for the laughter, the inside jokes, the support, and the little moments that mean more than words.
+              I hope this year brings you joy, success, and all the happiness you deserve.
+            </p>
+            <p>
+              Keep being your amazing self. Stay kind, stay goofy, stay you.
+              And remember: no matter how old you get, you’ll always be my favorite person to tease and love.
+            </p>
+            <p>
+              With all my love, <br />
+              <strong>Your sibling ❤️</strong>
+            </p>
+          </article>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Official titles</p>
+          <h3>🏆 Brother Awards</h3>
+          <div class="awards-grid">
+            <div class="award">
+              <span>🥇</span>
+              <h4>Best Annoying Brother</h4>
+            </div>
+            <div class="award">
+              <span>📚</span>
+              <h4>Free Advice Specialist</h4>
+            </div>
+            <div class="award">
+              <span>🍔</span>
+              <h4>Professional Food Stealer</h4>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel quiz-panel">
+          <p class="eyebrow">Mini game</p>
+          <h3>🎮 How well do you know your sibling?</h3>
+          <div id="quizBox" class="quiz-box">
+            <div id="questionCard">
+              <p id="questionText">Question</p>
+              <div id="options" class="options"></div>
+              <button id="nextBtn" class="secondary-btn">Next</button>
+            </div>
+            <div id="scoreCard" class="hidden score-card">
+              <h4>Your score</h4>
+              <p id="scoreText"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel final-panel">
+          <p class="eyebrow">Final surprise</p>
+          <h3>🎁 Locked Gift Box</h3>
+          <div class="gift-wrap">
+            <div id="giftBox" class="gift-box locked" aria-label="Open gift box">
+              <div class="gift-lid"></div>
+              <div class="gift-body"></div>
+            </div>
+            <button id="openGiftBtn" class="primary-btn">Open the Gift</button>
+          </div>
+
+          <div id="finalReveal" class="hidden reveal-box">
+            <h4>Happy Birthday, <span id="broNameReveal">Brother</span>! ❤️</h4>
+            <p>You are loved, celebrated, and deeply appreciated. Keep shining brighter every year.</p>
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="Birthday celebration" />
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
