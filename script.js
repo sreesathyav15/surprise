@@ -22,6 +22,7 @@ const finalReveal = document.getElementById("finalReveal");
 const envelope = document.getElementById("envelope");
 const letterContent = document.getElementById("letterContent");
 const closeLetterBtn = document.getElementById("closeLetterBtn");
+const openEnvelopeBtn = document.getElementById("openEnvelopeBtn");
 
 function displayBirthday() {
   const birthDate = new Date(BIRTHDAY_DATE);
@@ -36,7 +37,7 @@ function displayBirthday() {
 
 displayBirthday();
 
-// Polaroid Click-to-Reveal Functionality
+// Polaroid Click-to-Reveal Functionality with Ribbon-Cutting Animation
 const polaroids = document.querySelectorAll(".polaroid");
 polaroids.forEach((polaroid) => {
   const img = polaroid.querySelector("img");
@@ -47,8 +48,8 @@ polaroids.forEach((polaroid) => {
   });
 });
 
-// Envelope Animation
-envelope.addEventListener("click", () => {
+// Envelope Animation - can be triggered by OPEN button or direct envelope click
+function toggleEnvelope() {
   if (envelope.classList.contains("open")) {
     // Close envelope
     envelope.classList.remove("open");
@@ -59,7 +60,13 @@ envelope.addEventListener("click", () => {
     letterContent.classList.remove("hidden");
     burstConfetti(80);
   }
-});
+}
+
+// OPEN button listener
+openEnvelopeBtn.addEventListener("click", toggleEnvelope);
+
+// Direct envelope click still works
+envelope.addEventListener("click", toggleEnvelope);
 
 // Close Letter Button
 closeLetterBtn.addEventListener("click", (e) => {
