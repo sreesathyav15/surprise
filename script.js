@@ -1,4 +1,4 @@
-const BIRTHDAY_DATE = "2000-04-10";
+const BIRTHDAY_DATE = "2000-10-04";
 const brotherName = "Brother";
 
 const nameEls = [
