@@ -217,6 +217,12 @@ h3 {
   height: 210px;
   object-fit: cover;
   border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.polaroid.revealed img {
+  opacity: 1;
 }
 
 .polaroid figcaption {
