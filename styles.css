@@ -212,6 +212,36 @@ h3 {
   overflow: hidden;
 }
 
+.polaroid::before {
+  content: "";
+  position: absolute;
+  inset: -40% auto auto -12%;
+  width: 60%;
+  height: 18px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.9), rgba(255,255,255,0));
+  transform: rotate(-28deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.polaroid:hover::before {
+  animation: ribbonSweep 0.9s ease;
+}
+
+@keyframes ribbonSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) rotate(-28deg);
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(220px) rotate(-28deg);
+  }
+}
+
 .polaroid.rotate-right {
   transform: rotate(2deg);
 }
