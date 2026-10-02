@@ -28,7 +28,7 @@ function displayBirthday() {
   const birthDate = new Date(BIRTHDAY_DATE);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = birthDate.toLocaleDateString('en-US', options);
-  
+
   const birthdayEl = document.getElementById("birthdayDate");
   if (birthdayEl) {
     birthdayEl.textContent = formattedDate;
@@ -37,76 +37,105 @@ function displayBirthday() {
 
 displayBirthday();
 
-// Polaroid Click-to-Reveal Functionality with Ribbon-Cutting Animation
+// Polaroid Click-to-Reveal Functionality
 const polaroids = document.querySelectorAll(".polaroid");
 polaroids.forEach((polaroid) => {
   const img = polaroid.querySelector("img");
-  img.style.cursor = "pointer";
-  
+  if (img) {
+    img.style.cursor = "pointer";
+  }
+
   polaroid.addEventListener("click", () => {
     polaroid.classList.toggle("revealed");
   });
 });
 
-// Envelope Animation - can be triggered by OPEN button or direct envelope click
-function toggleEnvelope() {
+function openLetter() {
+  if (!envelope || !letterContent) return;
+
   if (envelope.classList.contains("open")) {
-    // Close envelope
     envelope.classList.remove("open");
     letterContent.classList.add("hidden");
   } else {
-    // Open envelope
     envelope.classList.add("open");
     letterContent.classList.remove("hidden");
     burstConfetti(80);
   }
 }
 
-// OPEN button listener
-openEnvelopeBtn.addEventListener("click", toggleEnvelope);
+// Support both mouse and touch for mobile devices
+const activateHandler = (event) => {
+  if (event) event.preventDefault();
+  openLetter();
+};
 
-// Direct envelope click still works
-envelope.addEventListener("click", toggleEnvelope);
+if (openEnvelopeBtn) {
+  openEnvelopeBtn.addEventListener("click", activateHandler);
+  openEnvelopeBtn.addEventListener("pointerdown", activateHandler);
+}
+
+if (envelope) {
+  envelope.addEventListener("click", activateHandler);
+  envelope.addEventListener("pointerdown", activateHandler);
+}
 
 // Close Letter Button
-closeLetterBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  envelope.classList.remove("open");
-  letterContent.classList.add("hidden");
-});
-
-// Close letter when clicking outside
-letterContent.addEventListener("click", (e) => {
-  if (e.target === letterContent) {
+if (closeLetterBtn) {
+  closeLetterBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
     envelope.classList.remove("open");
     letterContent.classList.add("hidden");
-  }
-});
+  });
+}
 
-openBtn.addEventListener("click", () => {
-  splash.classList.add("hidden");
-  content.classList.remove("hidden");
-  burstConfetti(120);
-});
+// Close letter when clicking outside
+if (letterContent) {
+  letterContent.addEventListener("click", (e) => {
+    if (e.target === letterContent) {
+      envelope.classList.remove("open");
+      letterContent.classList.add("hidden");
+    }
+  });
+}
 
-wishBtn.addEventListener("click", () => {
-  const message = `Happy Birthday, ${brotherName}! 🎉 You are amazing, loved, and deeply appreciated. Stay awesome always.`;
-  alert(message);
-  burstConfetti(80);
-});
+if (openBtn) {
+  openBtn.addEventListener("click", () => {
+    splash.classList.add("hidden");
+    content.classList.remove("hidden");
+    burstConfetti(120);
+  });
 
-openGiftBtn.addEventListener("click", () => {
-  giftBox.classList.remove("locked");
-  giftBox.classList.add("open");
-  finalReveal.classList.remove("hidden");
-  burstConfetti(200);
-});
+  openBtn.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
+    splash.classList.add("hidden");
+    content.classList.remove("hidden");
+    burstConfetti(120);
+  });
+}
+
+if (wishBtn) {
+  wishBtn.addEventListener("click", () => {
+    const message = `Happy Birthday, ${brotherName}! 🎉 You are amazing, loved, and deeply appreciated. Stay awesome always.`;
+    alert(message);
+    burstConfetti(80);
+  });
+}
+
+if (openGiftBtn) {
+  openGiftBtn.addEventListener("click", () => {
+    giftBox.classList.remove("locked");
+    giftBox.classList.add("open");
+    finalReveal.classList.remove("hidden");
+    burstConfetti(200);
+  });
+}
 
 const canvas = document.getElementById("confettiCanvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas ? canvas.getContext("2d") : null;
 let particles = [];
 
 function resizeCanvas() {
+  if (!canvas) return;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
@@ -115,6 +144,8 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
 function burstConfetti(count = 120) {
+  if (!canvas || !ctx) return;
+
   for (let i = 0; i < count; i++) {
     particles.push({
       x: window.innerWidth / 2,
@@ -130,6 +161,8 @@ function burstConfetti(count = 120) {
 }
 
 function animateConfetti() {
+  if (!canvas || !ctx) return;
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   for (let i = particles.length - 1; i >= 0; i--) {
