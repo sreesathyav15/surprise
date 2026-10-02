@@ -36,6 +36,17 @@ function displayBirthday() {
 
 displayBirthday();
 
+// Polaroid Click-to-Reveal Functionality
+const polaroids = document.querySelectorAll(".polaroid");
+polaroids.forEach((polaroid) => {
+  const img = polaroid.querySelector("img");
+  img.style.cursor = "pointer";
+  
+  polaroid.addEventListener("click", () => {
+    polaroid.classList.toggle("revealed");
+  });
+});
+
 // Envelope Animation
 envelope.addEventListener("click", () => {
   if (envelope.classList.contains("open")) {
