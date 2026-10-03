@@ -12,6 +12,11 @@
   --shadow: rgba(0, 0, 0, 0.45);
 }
 
+
+/* ==========================================
+   RESET
+   ========================================== */
+
 * {
   box-sizing: border-box;
 }
@@ -23,11 +28,23 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+
   background:
-    radial-gradient(circle at top, rgba(246, 199, 106, 0.08), transparent 28%),
-    linear-gradient(180deg, #04070d 0%, #0a1220 100%);
+    radial-gradient(
+      circle at top,
+      rgba(246, 199, 106, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #04070d 0%,
+      #0a1220 100%
+    );
+
   color: var(--text);
+
   font-family: "Inter", sans-serif;
+
   overflow-x: hidden;
 }
 
@@ -40,146 +57,296 @@ button {
   font: inherit;
 }
 
+
+/* ==========================================
+   BACKGROUND STARS
+   ========================================== */
+
 .stars {
   position: fixed;
   inset: 0;
+
   pointer-events: none;
+
   background-image:
-    radial-gradient(circle, rgba(255,255,255,0.8) 0.7px, transparent 1.1px),
-    radial-gradient(circle, rgba(255,255,255,0.6) 0.7px, transparent 1.2px),
-    radial-gradient(circle, rgba(255,255,255,0.5) 0.7px, transparent 1.3px);
-  background-size: 130px 130px, 170px 170px, 220px 220px;
-  background-position: center center;
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 0.7px,
+      transparent 1.1px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.6) 0.7px,
+      transparent 1.2px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.5) 0.7px,
+      transparent 1.3px
+    );
+
+  background-size:
+    130px 130px,
+    170px 170px,
+    220px 220px;
+
+  background-position:
+    center center;
+
   opacity: 0.28;
 }
 
+
+/* ==========================================
+   GLOW EFFECTS
+   ========================================== */
+
 .glow {
   position: fixed;
+
   width: 380px;
   height: 380px;
+
   border-radius: 50%;
+
   filter: blur(80px);
+
   opacity: 0.18;
+
   pointer-events: none;
 }
 
 .glow-1 {
   background: rgba(246, 199, 106, 0.8);
+
   top: -80px;
   right: 6%;
 }
 
 .glow-2 {
   background: rgba(255, 107, 129, 0.7);
+
   bottom: -70px;
   left: 6%;
 }
 
+
+/* ==========================================
+   PAGE
+   ========================================== */
+
 .page-shell {
   position: relative;
+
   z-index: 1;
+
   max-width: 1100px;
+
   margin: 0 auto;
+
   padding: 32px 20px 80px;
 }
 
+
+/* ==========================================
+   PANELS
+   ========================================== */
+
 .panel {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.01)
+    );
+
   border: 1px solid var(--line);
+
   border-radius: 22px;
+
   padding: 28px 22px;
+
   margin: 20px auto;
-  box-shadow: 0 18px 40px var(--shadow);
+
+  box-shadow:
+    0 18px 40px var(--shadow);
+
   backdrop-filter: blur(10px);
 }
 
+
+/* ==========================================
+   SPLASH SCREEN
+   ========================================== */
+
 .splash-screen {
   min-height: 78vh;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
   text-align: center;
 }
 
+
+/* ==========================================
+   TAG
+   ========================================== */
+
 .tag {
   display: inline-block;
+
   padding: 9px 18px;
+
   border-radius: 999px;
-  border: 1px solid rgba(246, 199, 106, 0.25);
-  background: rgba(246, 199, 106, 0.05);
+
+  border:
+    1px solid
+    rgba(246, 199, 106, 0.25);
+
+  background:
+    rgba(246, 199, 106, 0.05);
+
   color: var(--gold);
+
   font-size: 0.75rem;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 }
 
-h1, h2, h3, h4 {
+
+/* ==========================================
+   HEADINGS
+   ========================================== */
+
+h1,
+h2,
+h3,
+h4 {
   margin: 0 0 18px;
 }
 
 h1 {
   font-family: "Pacifico", cursive;
-  font-size: clamp(2.8rem, 7vw, 5rem);
+
+  font-size:
+    clamp(2.8rem, 7vw, 5rem);
+
   color: var(--gold);
+
   margin-top: 22px;
 }
 
 .splash-screen p {
   font-size: 1.15rem;
+
   color: var(--muted);
+
   margin-bottom: 24px;
 }
 
 .eyebrow {
   color: var(--gold);
+
   font-size: 0.8rem;
+
   letter-spacing: 0.12em;
+
   text-transform: uppercase;
+
   margin: 0 0 12px;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size:
+    clamp(2rem, 4vw, 3.4rem);
+
   letter-spacing: -0.04em;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size:
+    clamp(1.5rem, 3vw, 2.2rem);
 }
+
+
+/* ==========================================
+   BIRTHDAY INFO
+   ========================================== */
 
 .birthday-info {
   font-size: 1.1rem;
+
   color: var(--muted);
+
   margin: 0 0 24px;
 }
 
 .birthday-info span {
   color: var(--gold);
+
   font-weight: 600;
 }
+
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
 
 .primary-btn,
 .secondary-btn {
   border: none;
+
   cursor: pointer;
+
   border-radius: 999px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  -webkit-tap-highlight-color: transparent;
+
+  touch-action: manipulation;
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold),
+      var(--gold-strong)
+    );
+
   color: #111;
+
   padding: 14px 26px;
+
   font-weight: 800;
-  box-shadow: 0 16px 28px rgba(246, 199, 106, 0.25);
+
+  box-shadow:
+    0 16px 28px
+    rgba(246, 199, 106, 0.25);
 }
 
 .secondary-btn {
-  background: rgba(255,255,255,0.03);
+  background:
+    rgba(255, 255, 255, 0.03);
+
   color: var(--text);
-  border: 1px solid var(--line);
+
+  border:
+    1px solid var(--line);
+
   padding: 12px 20px;
+
   font-weight: 600;
 }
 
@@ -188,32 +355,65 @@ h3 {
   transform: translateY(-2px);
 }
 
+
+/* ==========================================
+   HIDDEN
+   ========================================== */
+
 .hidden {
   display: none !important;
 }
 
+
+/* ==========================================
+   MEMORIES / POLAROIDS
+   ========================================== */
+
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(180px, 1fr)
+    );
+
   gap: 18px;
+
   margin-top: 20px;
 }
 
 .polaroid {
   background: #f5f2ee;
+
   color: #191919;
+
   padding: 12px 12px 18px;
+
   border-radius: 8px;
-  box-shadow: 0 18px 30px rgba(0,0,0,0.4);
+
+  box-shadow:
+    0 18px 30px
+    rgba(0, 0, 0, 0.4);
+
   transform: rotate(-2deg);
+
   position: relative;
+
   overflow: hidden;
+
   cursor: pointer;
-  transition: transform 0.3s ease;
+
+  transition:
+    transform 0.3s ease;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .polaroid:hover {
-  transform: rotate(-2deg) scale(1.02);
+  transform:
+    rotate(-2deg)
+    scale(1.02);
 }
 
 .polaroid.rotate-right {
@@ -221,263 +421,705 @@ h3 {
 }
 
 .polaroid.rotate-right:hover {
-  transform: rotate(2deg) scale(1.02);
+  transform:
+    rotate(2deg)
+    scale(1.02);
 }
 
 .polaroid img {
   width: 100%;
+
   height: 210px;
+
   object-fit: cover;
+
   border-radius: 5px;
+
   opacity: 0;
-  clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+
+  clip-path:
+    polygon(
+      0% 50%,
+      100% 50%,
+      100% 50%,
+      0% 50%
+    );
 }
 
 .polaroid.revealed img {
-  animation: ribbonCutReveal 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation:
+    ribbonCutReveal
+    0.9s
+    cubic-bezier(
+      0.34,
+      1.56,
+      0.64,
+      1
+    )
+    forwards;
 }
 
+
+/* ==========================================
+   RIBBON PHOTO REVEAL
+   ========================================== */
+
 @keyframes ribbonCutReveal {
+
   0% {
     opacity: 0;
-    clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+
+    clip-path:
+      polygon(
+        0% 50%,
+        100% 50%,
+        100% 50%,
+        0% 50%
+      );
+
     transform: scale(0.95);
   }
+
   40% {
     opacity: 0;
-    clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+
+    clip-path:
+      polygon(
+        0% 50%,
+        100% 50%,
+        100% 50%,
+        0% 50%
+      );
   }
+
   60% {
-    clip-path: polygon(0% 25%, 100% 25%, 100% 75%, 0% 75%);
+    clip-path:
+      polygon(
+        0% 25%,
+        100% 25%,
+        100% 75%,
+        0% 75%
+      );
+
     transform: scale(1.02);
   }
+
   85% {
-    clip-path: polygon(0% 5%, 100% 5%, 100% 95%, 0% 95%);
+    clip-path:
+      polygon(
+        0% 5%,
+        100% 5%,
+        100% 95%,
+        0% 95%
+      );
   }
+
   100% {
     opacity: 1;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+    clip-path:
+      polygon(
+        0% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%
+      );
+
     transform: scale(1);
   }
 }
 
 .polaroid figcaption {
   padding-top: 12px;
+
   text-align: center;
+
   font-family: "Georgia", serif;
+
   font-size: 0.95rem;
 }
 
+
+/* ==========================================
+   BROTHER THINGS
+   ========================================== */
+
 .chips {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
   margin-top: 18px;
 }
 
 .chips span {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--line);
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid var(--line);
+
   border-radius: 999px;
+
   padding: 10px 14px;
+
   color: var(--muted);
 }
 
-/* Envelope Styles */
+
+/* ==========================================
+   ENVELOPE
+   ========================================== */
+
 .envelope-container {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   gap: 24px;
+
   margin-top: 28px;
+
+  width: 100%;
 }
 
 .open-envelope-btn {
   padding: 12px 28px;
+
   font-size: 0.95rem;
+
   letter-spacing: 0.1em;
+
+  position: relative;
+
+  z-index: 20;
+
+  touch-action: manipulation;
 }
+
+
+/* ==========================================
+   ENVELOPE BODY
+   ========================================== */
 
 .envelope {
   position: relative;
-  width: clamp(200px, 80vw, 380px);
-  height: clamp(140px, 60vw, 280px);
+
+  width:
+    clamp(
+      200px,
+      80vw,
+      380px
+    );
+
+  height:
+    clamp(
+      140px,
+      60vw,
+      280px
+    );
+
   cursor: pointer;
+
   perspective: 1000px;
+
   margin: 0 auto;
-  transition: all 0.3s ease;
+
+  transition:
+    transform 0.3s ease;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .envelope:hover {
   transform: translateY(-8px);
-  filter: drop-shadow(0 20px 30px rgba(246, 199, 106, 0.2));
+
+  filter:
+    drop-shadow(
+      0 20px 30px
+      rgba(246, 199, 106, 0.2)
+    );
 }
+
+
+/* ==========================================
+   ENVELOPE 3D WRAPPER
+   ========================================== */
 
 .envelope-wrapper {
   position: relative;
+
   width: 100%;
+
   height: 100%;
+
   transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  transition:
+    transform
+    0.8s
+    cubic-bezier(
+      0.68,
+      -0.55,
+      0.265,
+      1.55
+    );
 }
 
 .envelope.open .envelope-wrapper {
   transform: rotateX(100deg);
 }
 
+
+/* ==========================================
+   ENVELOPE FRONT / BACK
+   ========================================== */
+
 .envelope-front,
 .envelope-back {
   position: absolute;
+
   width: 100%;
+
   height: 100%;
-  background: linear-gradient(135deg, #fff8dc 0%, #fffacd 100%);
-  border: 2px solid #d4a574;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8dc 0%,
+      #fffacd 100%
+    );
+
+  border:
+    2px solid #d4a574;
+
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  box-shadow:
+    0 8px 24px
+    rgba(0, 0, 0, 0.3);
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   backface-visibility: hidden;
 }
 
 .envelope-back {
   transform: rotateY(180deg);
-  background: linear-gradient(135deg, #faf0e6 0%, #ffe4b5 100%);
+
+  background:
+    linear-gradient(
+      135deg,
+      #faf0e6 0%,
+      #ffe4b5 100%
+    );
 }
+
+
+/* ==========================================
+   ENVELOPE FLAP
+   ========================================== */
 
 .envelope-flap {
   position: absolute;
+
   top: 0;
+
   left: 50%;
-  transform: translateX(-50%);
+
+  transform:
+    translateX(-50%);
+
   width: 0;
+
   height: 0;
-  border-left: clamp(100px, 40vw, 190px) solid transparent;
-  border-right: clamp(100px, 40vw, 190px) solid transparent;
-  border-top: clamp(70px, 35vw, 140px) solid #d4a574;
-  transform-origin: top center;
-  transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  border-left:
+    clamp(
+      100px,
+      40vw,
+      190px
+    )
+    solid transparent;
+
+  border-right:
+    clamp(
+      100px,
+      40vw,
+      190px
+    )
+    solid transparent;
+
+  border-top:
+    clamp(
+      70px,
+      35vw,
+      140px
+    )
+    solid #d4a574;
+
+  transform-origin:
+    top center;
+
+  transition:
+    transform
+    0.7s
+    cubic-bezier(
+      0.68,
+      -0.55,
+      0.265,
+      1.55
+    );
+
   cursor: pointer;
+
   z-index: 10;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+
+  filter:
+    drop-shadow(
+      0 4px 8px
+      rgba(0, 0, 0, 0.2)
+    );
+
+  pointer-events: auto;
 }
 
 .envelope.open .envelope-flap {
-  transform: translateX(-50%) rotateX(180deg) rotateY(0deg);
-  animation: flapFall 0.8s ease-in 0.7s forwards;
+  transform:
+    translateX(-50%)
+    rotateX(180deg)
+    rotateY(0deg);
+
+  animation:
+    flapFall
+    0.8s
+    ease-in
+    0.7s
+    forwards;
 }
 
+
+/* ==========================================
+   FLAP FALL ANIMATION
+   ========================================== */
+
 @keyframes flapFall {
+
   0% {
-    transform: translateX(-50%) rotateX(180deg) rotateY(0deg);
+    transform:
+      translateX(-50%)
+      rotateX(180deg)
+      rotateY(0deg);
+
     opacity: 1;
   }
+
   100% {
-    transform: translateX(-50%) rotateX(180deg) rotateY(0deg) translateY(120px);
+    transform:
+      translateX(-50%)
+      rotateX(180deg)
+      rotateY(0deg)
+      translateY(120px);
+
     opacity: 0;
   }
 }
 
+
+/* ==========================================
+   ENVELOPE HEART / ICON
+   ========================================== */
+
 .envelope-text {
-  font-size: clamp(2rem, 8vw, 4rem);
-  animation: pulse-envelope 1.5s ease-in-out infinite;
+  font-size:
+    clamp(
+      2rem,
+      8vw,
+      4rem
+    );
+
+  animation:
+    pulse-envelope
+    1.5s
+    ease-in-out
+    infinite;
+
   pointer-events: none;
-  text-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+
+  text-shadow:
+    0 0 20px
+    rgba(212, 165, 116, 0.3);
+
+  position: relative;
+
+  z-index: 2;
 }
 
 @keyframes pulse-envelope {
-  0%, 100% { 
-    transform: scale(1) rotateZ(0deg);
+
+  0%,
+  100% {
+    transform:
+      scale(1)
+      rotateZ(0deg);
   }
-  50% { 
-    transform: scale(1.15) rotateZ(5deg);
+
+  50% {
+    transform:
+      scale(1.15)
+      rotateZ(5deg);
   }
 }
 
 .envelope.open .envelope-text {
-  animation: textFloat 0.8s ease-out forwards;
+  animation:
+    textFloat
+    0.8s
+    ease-out
+    forwards;
 }
 
 @keyframes textFloat {
+
   0% {
     opacity: 1;
-    transform: scale(1) translateY(0);
+
+    transform:
+      scale(1)
+      translateY(0);
   }
+
   100% {
     opacity: 0;
-    transform: scale(0.5) translateY(-40px);
+
+    transform:
+      scale(0.5)
+      translateY(-40px);
   }
 }
 
+
+/* ==========================================
+   LETTER
+   ========================================== */
+
 .letter {
-  background: linear-gradient(135deg, rgba(255, 248, 220, 0.92), rgba(255, 235, 186, 0.86));
-  border: 2px solid rgba(212, 165, 116, 0.35);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 248, 220, 0.92),
+      rgba(255, 235, 186, 0.86)
+    );
+
+  border:
+    2px solid
+    rgba(212, 165, 116, 0.35);
+
   border-radius: 16px;
+
   padding: 32px 26px;
+
   color: #1a1714;
+
   line-height: 1.8;
+
   font-size: 1.03rem;
+
   position: relative;
+
+  width: 100%;
+
   max-width: 500px;
+
   margin: 0 auto;
-  animation: slideInLetter 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  animation:
+    slideInLetter
+    0.8s
+    cubic-bezier(
+      0.34,
+      1.56,
+      0.64,
+      1
+    );
+
   box-shadow:
-    inset 0 0 30px rgba(255, 248, 220, 0.15),
-    0 12px 40px rgba(0, 0, 0, 0.25);
+    inset
+    0 0 30px
+    rgba(255, 248, 220, 0.15),
+
+    0 12px 40px
+    rgba(0, 0, 0, 0.25);
+
   font-family: "Georgia", serif;
+
   overflow: hidden;
 }
 
-/* Floating gold dust particles */
+
+/* ==========================================
+   LETTER GOLD DUST
+   ========================================== */
+
 .letter::before {
   content: "";
+
   position: absolute;
+
   inset: 0;
+
   pointer-events: none;
+
   background:
-    /* Layer 1 - Light dust particles */
-    radial-gradient(circle at 15% 25%, rgba(255, 214, 102, 0.5) 0 0.8px, transparent 1.6px),
-    radial-gradient(circle at 35% 15%, rgba(255, 229, 147, 0.4) 0 0.7px, transparent 1.5px),
-    radial-gradient(circle at 48% 35%, rgba(255, 255, 255, 0.35) 0 0.6px, transparent 1.4px),
-    radial-gradient(circle at 72% 22%, rgba(255, 211, 90, 0.45) 0 0.75px, transparent 1.55px),
-    radial-gradient(circle at 88% 48%, rgba(255, 238, 181, 0.4) 0 0.7px, transparent 1.5px),
-    radial-gradient(circle at 25% 65%, rgba(255, 214, 102, 0.35) 0 0.65px, transparent 1.45px),
-    radial-gradient(circle at 62% 75%, rgba(255, 229, 147, 0.4) 0 0.7px, transparent 1.5px),
-    radial-gradient(circle at 82% 82%, rgba(255, 255, 255, 0.3) 0 0.6px, transparent 1.4px);
+
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(255, 214, 102, 0.5)
+      0 0.8px,
+      transparent 1.6px
+    ),
+
+    radial-gradient(
+      circle at 35% 15%,
+      rgba(255, 229, 147, 0.4)
+      0 0.7px,
+      transparent 1.5px
+    ),
+
+    radial-gradient(
+      circle at 48% 35%,
+      rgba(255, 255, 255, 0.35)
+      0 0.6px,
+      transparent 1.4px
+    ),
+
+    radial-gradient(
+      circle at 72% 22%,
+      rgba(255, 211, 90, 0.45)
+      0 0.75px,
+      transparent 1.55px
+    ),
+
+    radial-gradient(
+      circle at 88% 48%,
+      rgba(255, 238, 181, 0.4)
+      0 0.7px,
+      transparent 1.5px
+    ),
+
+    radial-gradient(
+      circle at 25% 65%,
+      rgba(255, 214, 102, 0.35)
+      0 0.65px,
+      transparent 1.45px
+    ),
+
+    radial-gradient(
+      circle at 62% 75%,
+      rgba(255, 229, 147, 0.4)
+      0 0.7px,
+      transparent 1.5px
+    ),
+
+    radial-gradient(
+      circle at 82% 82%,
+      rgba(255, 255, 255, 0.3)
+      0 0.6px,
+      transparent 1.4px
+    );
+
   background-size: 100% 100%;
+
   opacity: 0.7;
+
   mix-blend-mode: screen;
-  animation: floatingDust 12s ease-in-out infinite;
+
+  animation:
+    floatingDust
+    12s
+    ease-in-out
+    infinite;
 }
 
 @keyframes floatingDust {
+
   0% {
-    transform: translateY(8px) translateX(-2px) scale(1);
+    transform:
+      translateY(8px)
+      translateX(-2px)
+      scale(1);
+
     opacity: 0.5;
   }
+
   25% {
-    transform: translateY(-4px) translateX(3px) scale(1.02);
+    transform:
+      translateY(-4px)
+      translateX(3px)
+      scale(1.02);
+
     opacity: 0.75;
   }
+
   50% {
-    transform: translateY(-12px) translateX(1px) scale(0.98);
+    transform:
+      translateY(-12px)
+      translateX(1px)
+      scale(0.98);
+
     opacity: 0.8;
   }
+
   75% {
-    transform: translateY(-6px) translateX(-2px) scale(1.01);
+    transform:
+      translateY(-6px)
+      translateX(-2px)
+      scale(1.01);
+
     opacity: 0.6;
   }
+
   100% {
-    transform: translateY(8px) translateX(-2px) scale(1);
+    transform:
+      translateY(8px)
+      translateX(-2px)
+      scale(1);
+
     opacity: 0.5;
   }
 }
 
+
+/* ==========================================
+   LETTER LIGHT EFFECT
+   ========================================== */
+
 .letter::after {
   content: "";
+
   position: absolute;
+
   inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), transparent 15%, transparent 85%, rgba(212, 165, 116, 0.08));
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 15%,
+      transparent 85%,
+      rgba(212, 165, 116, 0.08)
+    );
+
   pointer-events: none;
 }
 
@@ -485,142 +1127,287 @@ h3 {
   animation: none;
 }
 
+
+/* ==========================================
+   LETTER OPEN ANIMATION
+   ========================================== */
+
 @keyframes slideInLetter {
+
   0% {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+
+    transform:
+      translateY(30px)
+      scale(0.95);
   }
+
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+
+    transform:
+      translateY(0)
+      scale(1);
   }
 }
 
+
+/* ==========================================
+   LETTER TEXT
+   ========================================== */
+
 .letter p {
   margin: 0 0 16px;
+
   position: relative;
+
   z-index: 1;
+
   font-weight: 500;
 }
 
 .letter p:first-child {
   font-size: 1.1rem;
+
   font-weight: 600;
+
   color: #0a0805;
+
   margin-bottom: 20px;
 }
 
 .letter p strong {
   color: #8b6f47;
+
   font-weight: 700;
 }
 
+
+/* ==========================================
+   CLOSE LETTER BUTTON
+   ========================================== */
+
 .close-letter-btn {
   position: absolute;
+
   top: 12px;
+
   right: 12px;
-  background: rgba(255, 107, 129, 0.1);
-  border: 1px solid rgba(255, 107, 129, 0.3);
+
+  background:
+    rgba(255, 107, 129, 0.1);
+
+  border:
+    1px solid
+    rgba(255, 107, 129, 0.3);
+
   color: var(--rose);
+
   width: 32px;
+
   height: 32px;
+
   border-radius: 50%;
+
   font-size: 1.2rem;
+
   cursor: pointer;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  transition: all 0.2s ease;
+
+  transition:
+    all 0.2s ease;
+
   padding: 0;
+
   z-index: 10;
+
+  touch-action: manipulation;
 }
 
 .close-letter-btn:hover {
-  background: rgba(255, 107, 129, 0.2);
-  border-color: rgba(255, 107, 129, 0.6);
+  background:
+    rgba(255, 107, 129, 0.2);
+
+  border-color:
+    rgba(255, 107, 129, 0.6);
+
   transform: rotate(90deg);
 }
 
+
+/* ==========================================
+   AWARDS
+   ========================================== */
+
 .awards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(180px, 1fr)
+    );
+
   gap: 16px;
+
   margin-top: 18px;
 }
 
 .award {
   padding: 22px 16px;
+
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(246, 199, 106, 0.09), rgba(255,255,255,0.02));
-  border: 1px solid rgba(246, 199, 106, 0.18);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(246, 199, 106, 0.09),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  border:
+    1px solid
+    rgba(246, 199, 106, 0.18);
+
   text-align: center;
 }
 
 .award span {
   font-size: 2rem;
+
   display: block;
+
   margin-bottom: 8px;
 }
 
 .award h4 {
   margin-top: 8px;
+
   margin-bottom: 0;
+
   color: var(--gold);
 }
 
+
+/* ==========================================
+   GIFT BOX
+   ========================================== */
+
 .gift-wrap {
   display: flex;
+
   align-items: center;
+
   gap: 20px;
+
   flex-wrap: wrap;
+
   margin-top: 20px;
 }
 
 .gift-box {
   position: relative;
+
   width: 120px;
+
   height: 120px;
+
   cursor: pointer;
-  transition: transform 0.3s ease;
+
+  transition:
+    transform 0.3s ease;
+
+  touch-action: manipulation;
 }
 
 .gift-box:hover {
-  transform: translateY(-2px) scale(1.05);
+  transform:
+    translateY(-2px)
+    scale(1.05);
 }
 
 .gift-lid {
   position: absolute;
+
   left: 10px;
+
   right: 10px;
+
   top: 8px;
+
   height: 30px;
+
   border-radius: 10px;
-  background: linear-gradient(180deg, #ffbe52, #d88b18);
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.12);
-  transition: transform 0.35s ease;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffbe52,
+      #d88b18
+    );
+
+  box-shadow:
+    inset
+    0 0 0 1px
+    rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.35s ease;
 }
 
 .gift-body {
   position: absolute;
+
   left: 18px;
+
   right: 18px;
+
   top: 34px;
+
   bottom: 12px;
+
   border-radius: 12px;
-  background: linear-gradient(180deg, #2a241d, #1b1714);
-  border: 1px solid rgba(255,255,255,0.08);
+
+  background:
+    linear-gradient(
+      180deg,
+      #2a241d,
+      #1b1714
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
 }
 
 .gift-box.open .gift-lid {
-  transform: rotate(-18deg) translateY(-12px);
+  transform:
+    rotate(-18deg)
+    translateY(-12px);
 }
+
+
+/* ==========================================
+   FINAL REVEAL
+   ========================================== */
 
 .reveal-box {
   margin-top: 24px;
+
   border-radius: 18px;
+
   padding: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.02);
+
+  border:
+    1px solid var(--line);
+
+  background:
+    rgba(255, 255, 255, 0.02);
 }
 
 .reveal-box h4 {
@@ -629,61 +1416,353 @@ h3 {
 
 .reveal-box img {
   width: 100%;
+
   max-width: 420px;
+
   border-radius: 14px;
+
   margin-top: 16px;
-  box-shadow: 0 18px 30px rgba(0,0,0,0.35);
+
+  box-shadow:
+    0 18px 30px
+    rgba(0, 0, 0, 0.35);
 }
+
+
+/* ==========================================
+   CONFETTI
+   ========================================== */
 
 #confettiCanvas {
   position: fixed;
+
   inset: 0;
+
   width: 100%;
+
   height: 100%;
+
   pointer-events: none;
+
   z-index: 5;
 }
 
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
 @media (max-width: 768px) {
+
   .envelope-flap {
-    border-left: clamp(80px, 35vw, 150px) solid transparent !important;
-    border-right: clamp(80px, 35vw, 150px) solid transparent !important;
-    border-top: clamp(60px, 30vw, 110px) solid #d4a574 !important;
+    border-left:
+      clamp(
+        80px,
+        35vw,
+        150px
+      )
+      solid transparent !important;
+
+    border-right:
+      clamp(
+        80px,
+        35vw,
+        150px
+      )
+      solid transparent !important;
+
+    border-top:
+      clamp(
+        60px,
+        30vw,
+        110px
+      )
+      solid #d4a574 !important;
   }
 
   .letter {
     padding: 24px 18px;
+
     font-size: 0.95rem;
   }
 }
 
+
+/* ==========================================
+   MOBILE - IMPORTANT LETTER FIX
+   ========================================== */
+
 @media (max-width: 620px) {
+
   .page-shell {
     padding-inline: 14px;
   }
+
 
   .panel {
     padding: 22px 16px;
   }
 
-  .envelope {
+
+  /* --------------------------------
+     Envelope container
+     -------------------------------- */
+
+  .envelope-container {
     width: 100%;
-    height: auto;
-    min-height: 200px;
+
+    gap: 20px;
+
+    overflow: visible;
+
+    position: relative;
   }
+
+
+  /* --------------------------------
+     OPEN button
+     -------------------------------- */
+
+  .open-envelope-btn {
+    padding: 11px 26px;
+
+    font-size: 0.9rem;
+
+    min-height: 44px;
+
+    position: relative;
+
+    z-index: 30;
+
+    touch-action: manipulation;
+  }
+
+
+  /* --------------------------------
+     Mobile envelope
+     -------------------------------- */
+
+  .envelope {
+    width:
+      min(88vw, 340px);
+
+    height:
+      min(58vw, 220px);
+
+    min-height: 0;
+
+    perspective: 900px;
+
+    margin: 0 auto;
+
+    touch-action: manipulation;
+
+    position: relative;
+  }
+
+
+  /* --------------------------------
+     Envelope wrapper
+     -------------------------------- */
+
+  .envelope-wrapper {
+    width: 100%;
+
+    height: 100%;
+
+    transform-style: preserve-3d;
+  }
+
+
+  /* --------------------------------
+     Envelope front/back
+     -------------------------------- */
+
+  .envelope-front,
+  .envelope-back {
+    width: 100%;
+
+    height: 100%;
+  }
+
+
+  /* --------------------------------
+     Envelope flap
+     -------------------------------- */
+
+  .envelope-flap {
+    border-left-width:
+      min(44vw, 170px) !important;
+
+    border-right-width:
+      min(44vw, 170px) !important;
+
+    border-top-width:
+      min(30vw, 110px) !important;
+
+    z-index: 10;
+
+    transform-origin:
+      top center;
+  }
+
+
+  /* --------------------------------
+     Envelope icon
+     -------------------------------- */
+
+  .envelope-text {
+    font-size:
+      clamp(
+        2rem,
+        14vw,
+        3.5rem
+      );
+  }
+
+
+  /* --------------------------------
+     Letter
+     -------------------------------- */
 
   .letter {
-    font-size: 0.9rem;
-    padding: 20px 16px;
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 24px 18px;
+
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+
+    margin-top: 4px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
   }
 
-  .close-letter-btn {
-    width: 28px;
-    height: 28px;
+
+  /* --------------------------------
+     Letter first line
+     -------------------------------- */
+
+  .letter p:first-child {
     font-size: 1rem;
+
+    padding-right: 32px;
   }
+
+
+  /* --------------------------------
+     Close button
+     -------------------------------- */
+
+  .close-letter-btn {
+    width: 30px;
+
+    height: 30px;
+
+    font-size: 1rem;
+
+    top: 10px;
+
+    right: 10px;
+
+    z-index: 20;
+
+    touch-action: manipulation;
+  }
+
+
+  /* --------------------------------
+     Gift
+     -------------------------------- */
 
   .gift-wrap {
     align-items: flex-start;
+  }
+
+
+  /* --------------------------------
+     Awards
+     -------------------------------- */
+
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* --------------------------------
+     Memory images
+     -------------------------------- */
+
+  .polaroid img {
+    height: 220px;
+  }
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+   ========================================== */
+
+@media (max-width: 380px) {
+
+  .page-shell {
+    padding-inline: 10px;
+  }
+
+  .panel {
+    padding: 20px 13px;
+  }
+
+  .envelope {
+    width: 90vw;
+
+    height: 52vw;
+
+    max-height: 190px;
+  }
+
+  .letter {
+    padding: 22px 15px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.65;
+  }
+
+  .open-envelope-btn {
+    padding: 10px 22px;
+  }
+
+  .polaroid img {
+    height: 190px;
+  }
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
   }
 }
